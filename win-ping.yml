@@ -1,5 +1,8 @@
+---
 - name: Verify Host Connectivity
   hosts: all
+  become: false
+  gather_facts: false
   tasks:
     - name: Ping all managed nodes
       win_ping:
