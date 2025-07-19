@@ -1,1 +1,7 @@
-test2
+---
+- name: ping all hosts2
+  gather_facts: false
+  hosts: all
+  tasks:
+    - name: ping a host
+      ping:
