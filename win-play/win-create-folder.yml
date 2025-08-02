@@ -1,0 +1,11 @@
+---
+  - name: create folder playbook
+    hosts: all
+    become: false
+    gather_facts: false
+    tasks:
+      - name: crete the folder structure as per requirement
+        ansible.windows.win_file:
+          path: C:\Temp\folder\subfolder
+          state: directory
+        
