@@ -1,0 +1,11 @@
+---
+  - name: Delete the folders
+    hosts: all
+    become: false
+    gather_facts: false
+    tasks:
+      - name: Delete the requested folders
+        ansible.windows.win_file:
+        path: C:\Temp\folder\subfolder
+        state: absent
+      
