@@ -1,1 +1,16 @@
 
+---
+  - name: create folder playbook
+    hosts: all
+    become: false
+    gather_facts: false
+    tasks:
+      - name: crete the folder structure as per requirement
+        ansible.windows.win_file:
+          path: C:\Temp\folder\subfolder
+          state: directory
+      - name: Download the file
+        ansible.builtin.get_url:
+            url: 'https://github.com/pradipghegade/ansible2/blob/1e1d7c147f91c4fe112a482734a5bda512fc1a65/win-play/script.ps1'
+            dest: 'C:\Temp\folder\subfolder\file.txt'
+            mode: '0644' # Set appropriate file permissions 
