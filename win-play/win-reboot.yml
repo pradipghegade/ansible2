@@ -1,2 +1,8 @@
-- name: Reboot the machine with all defaults
-  ansible.windows.win_reboot:
+---
+- name: Verify Host Connectivity
+  hosts: all
+  become: false
+  gather_facts: false
+  tasks:
+  - name: Reboot the machine with all defaults
+    ansible.windows.win_reboot:
