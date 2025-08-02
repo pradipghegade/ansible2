@@ -6,6 +6,6 @@
     tasks:
       - name: Delete the requested folders
         ansible.windows.win_file:
-        path: C:\Temp\folder\subfolder
-        state: absent
+         path: C:\Temp\folder\subfolder
+         state: absent
       
