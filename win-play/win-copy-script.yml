@@ -11,7 +11,7 @@
           state: directory
       - name: Copy file using win_copy
         ansible.windows.win_copy:
-          src: "\\SCCM\temp\foo.txt"  # Source file path on the source server
+          src: "\\\\SCCM\\temp\\foo.txt"  # Source file path on the source server
           dest: "C:\\temp\\copied.txt"  # Destination path on the target server
           remote_src: yes  # Important: Indicates that the source is on a remote host
           backup: yes  # Optional: Creates a backup of the destination file before copying
