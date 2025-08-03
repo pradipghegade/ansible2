@@ -9,5 +9,5 @@
           script: |
             #echo "Hello from PowerShell!" | out-file c:\temp\ps.txt -append
             #Copy-Item '\\sccm\c$\temp\foo.txt' c:\temp\newfile.txt
-            $date | out-file c:\temp\ps.txt -append
+            get-date | out-file c:\temp\ps.txt -append
       
