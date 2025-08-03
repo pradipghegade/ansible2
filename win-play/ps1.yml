@@ -1,0 +1,7 @@
+---
+  - name: Run powershell command
+    hosts: all
+    become: false
+    father_facts: false
+    - tasks:
+      
