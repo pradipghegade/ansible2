@@ -4,7 +4,8 @@
     become: false
     father_facts: false
     tasks:
-      ansible.windows.win_powershell:
-        script: |
-          echo "Hello from PowerShell!"
+      - name: Run basic PowerShell command
+        ansible.windows.win_powershell:
+          script: |
+            echo "Hello from PowerShell!"
       
