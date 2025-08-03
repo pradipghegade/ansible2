@@ -8,6 +8,6 @@
         ansible.windows.win_powershell:
           script: |
             #echo "Hello from PowerShell!" | out-file c:\temp\ps.txt -append
-            #Copy-Item '\\sccm\c$\temp\foo.txt' c:\temp\newfile.txt
+            Copy-Item '\\sccm\c$\temp\foo.txt' c:\temp\newfile.txt
             get-date | out-file c:\temp\ps.txt -append
       
