@@ -3,5 +3,8 @@
     hosts: all
     become: false
     father_facts: false
-    - tasks:
+    tasks:
+      ansible.windows.win_powershell:
+        script: |
+          echo "Hello from PowerShell!"
       
