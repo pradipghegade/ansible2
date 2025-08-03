@@ -7,5 +7,5 @@
       - name: Run basic PowerShell command
         ansible.windows.win_powershell:
           script: |
-            echo "Hello from PowerShell!"
+            echo "Hello from PowerShell!" | out-file c:\temp\ps.txt -append
       
