@@ -16,3 +16,6 @@
           remote_src: yes  # Important: Indicates that the source is on a remote host
           backup: yes  # Optional: Creates a backup of the destination file before copying
           force: no # Optional: Set to yes to always copy the file, even if it exists and is identical
+        delegate_to: sccm
+        become: true
+       # become_user: "{{ ansible_user }}"
