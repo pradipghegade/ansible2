@@ -7,7 +7,7 @@
       - name: Run basic PowerShell command
         ansible.windows.win_powershell:
           script: |
-            #echo "Hello from PowerShell!" | out-file c:\temp\ps.txt -append
-            Copy-Item '\\sccm\c$\temp\foo.txt' c:\temp\newfile.txt
+            echo "Hello from PowerShell!" | out-file c:\temp\ps.txt -append
+            Copy-Item '\\sccm\c$\temp\foo.txt' c:\temp\newfile.txt -Force -Recurse
             get-date | out-file c:\temp\ps.txt -append
       
