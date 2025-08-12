@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: AWX-server
   become: true
   tasks:
     - name: Create directory for daily logs
