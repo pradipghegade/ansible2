@@ -1,8 +1,10 @@
 ---
-- hosts: AWX-server
-  become: true
-  #become_user: pradip
+- name: Create a directory on the remote server
+  hosts: all  # Define the target hosts (use a specific group or 'all' for all hosts in the inventory)
+  become: yes  # Use become if you need to perform the task with sudo privileges
   tasks:
-    - name: Create directory for daily logs with command module
-      ansible.builtin.command:
-        cmd: "mkdir -p /var/logs/app/daily_logs"
+    - name: Ensure the directory /var/log/app exists
+      file:
+        path: /var/log/app  # The path of the directory to create
+        state: directory
+        mode: '0755'  # Optional: set the permissions for the directory
