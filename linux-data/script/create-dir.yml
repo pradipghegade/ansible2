@@ -1,6 +1,6 @@
 ---
 - hosts: AWX-server
-  #become: true
+  become: true
   tasks:
     - name: Create directory for daily logs
       ansible.builtin.file:
