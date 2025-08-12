@@ -2,7 +2,7 @@
 ---
   - name: create folder playbook
     hosts: all
-    become: false
+    become: true
     gather_facts: false
     tasks:
       - name: crete the folder structure as per requirement
