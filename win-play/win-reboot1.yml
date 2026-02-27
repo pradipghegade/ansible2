@@ -1,0 +1,7 @@
+---
+- name: Reboot severs
+  hosts: all
+  become: true
+  tasks:
+    - name : Reboot the server
+      ansible.builtin.reboot:
