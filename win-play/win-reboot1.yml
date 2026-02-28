@@ -3,5 +3,5 @@
   hosts: all
   become: true
   tasks:
-    - name : Reboot the server
+    - name : task to Reboot the servers
       ansible.windows.win_reboot:
