@@ -3,7 +3,8 @@
   hosts: all
   become: false
   gather_facts: false
-
-  ansible.windows.win_copy:
-    src: /impfile.txt
-    dest: C:\Temp\impfile.txt
+  tasks:
+  - name: Copy a single file
+    ansible.windows.win_copy:
+      src: /impfile.txt
+      dest: C:\Temp\impfile.txt
