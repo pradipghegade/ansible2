@@ -1,0 +1,10 @@
+---
+  - name: Run powershell script to copy setup
+    hosts: all
+    become: true
+    gather_facts: false
+    tasks:
+      - name: script to copy msi file
+        ansible.windows.win_powershell:
+          script: |
+            Copy-Item '\\pune-dc\c$\temp\powershell.msi' c:\temp\ -force
