@@ -1,10 +1,7 @@
----
-- name: Copy a single file
-  hosts: all
-  become: false
-  gather_facts: false
+- name: Copy file directly between servers
+  hosts: source_server
   tasks:
-  - name: Copy a single file
-    ansible.windows.win_copy:
-      src: /impfile.txt
-      dest: C:\Temp\impfile.txt
+    - name: Use robocopy to transfer file
+      ansible.windows.win_command: >
+        robocopy C:\temp\source \\destination_server\C$\temp\file.txt
+
