@@ -1,7 +1,12 @@
-- name: Copy file from source to destinations
-  hosts: destination_group
+---
+- name: Copy file to multiple destination servers
+  hosts: source_server
   tasks:
-    - name: Copy file from source_server to destination
-      win_copy:
-        src: "\\\\source_server\\C$\\temp\\source\\imp-file.txt"
-        dest: "C:\\temp\\source\\file.txt"
+    - name: Use robocopy to transfer file
+      ansible.windows.win_command: >
+        robocopy C:\temp\source \\{{ item }}\C$\temp dest-file.txt
+      loop:
+        - destination_server1
+        - destination_server2
+        - destination_server3
+        - destination_server4
