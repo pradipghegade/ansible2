@@ -1,0 +1,6 @@
+- name: Copy file directly between servers
+  hosts: all
+  tasks:
+    - name: Use robocopy to transfer file
+      ansible.windows.win_command: >
+        robocopy \\source_server\C$\temp\source\imp-file.txt \\destination_server\C$\temp\dest-file.txt
