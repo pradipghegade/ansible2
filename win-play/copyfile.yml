@@ -5,7 +5,7 @@
   tasks:
     - name: Use robocopy to transfer file
       ansible.windows.win_command: >
-        robocopy C:\temp\source \\{{ item }}\C$\temp dest-file.txt
+        robocopy 'C:\temp\source' '\\{{ item }}\C$\temp\dest-file.txt'
       loop:
         - destination_server1
         - destination_server2
