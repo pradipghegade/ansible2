@@ -7,4 +7,4 @@
       - name: script to copy msi file
         ansible.windows.win_powershell:
           script: |
-            Copy-Item '\\pune-dc\c$\temp\powershell.msi' c:\temp -force
+            Copy-Item '\\pune-dc\c$\temp\powershell.msi' c:\temp\powershell.msi -force
