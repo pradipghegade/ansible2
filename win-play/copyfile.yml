@@ -1,0 +1,7 @@
+- name: Copy file from source to destinations
+  hosts: destination_group
+  tasks:
+    - name: Copy file from source_server to destination
+      win_copy:
+        src: "\\\\source_server\\C$\\temp\\source\\imp-file.txt"
+        dest: "C:\\temp\\source\\file.txt"
