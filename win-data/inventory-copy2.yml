@@ -1,0 +1,17 @@
+all:
+  children:
+    source_group:
+      hosts:
+        source_server:
+          ansible_host: 192.168.12.51
+
+    destination_group:
+      hosts:
+        destination_server1:
+          ansible_host: 192.168.13.31
+        destination_server2:
+          ansible_host: 192.168.13.32
+        destination_server3:
+          ansible_host: 192.168.13.34
+        destination_server4:
+          ansible_host: 192.168.13.33
