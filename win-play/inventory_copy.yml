@@ -1,0 +1,9 @@
+all:
+  hosts:
+    source_server:
+      ansible_host: 192.168.12.51
+    destination_server:
+      ansible_host: 192.168.13.31
+      ansible_host: 192.168.13.32
+      ansible_host: 192.168.13.33
+      ansible_host: 192.168.13.34
