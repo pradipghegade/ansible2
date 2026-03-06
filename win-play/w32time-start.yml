@@ -1,0 +1,9 @@
+---
+- name: Stop Windows Service Example
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Stop the specific service (e.g., W32Time)
+      ansible.windows.win_service:
+        name: W32Time
+        state: started
