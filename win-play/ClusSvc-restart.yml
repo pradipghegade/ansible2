@@ -1,0 +1,14 @@
+---
+- name: Restart Windows Service ClusSvc
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Stop the specific service (e.g., ClusSvc)
+      ansible.windows.win_service:
+        name: ClusSvc
+        state: stopped
+
+    - name: start the specific service (e.g., ClusSvc)
+      ansible.windows.win_service:
+        name: ClusSvc
+        state: started
