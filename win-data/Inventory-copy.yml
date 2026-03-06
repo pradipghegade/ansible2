@@ -5,5 +5,5 @@ all:
     destination_server:
       ansible_host: 192.168.13.31
       ansible_host: 192.168.13.32
-      ansible_host: 192.168.13.34
+#      ansible_host: 192.168.13.34
       ansible_host: 192.168.13.33
