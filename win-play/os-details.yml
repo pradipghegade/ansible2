@@ -16,3 +16,8 @@
     - name: Show OS details (captured by AWX job output)
       debug:
         msg: "{{ os_summary }}"
+        
+    - name: Push OS details into AWX stats
+      ansible.builtin.set_stats:
+        data:
+          windows_os_details: "{{ os_info.stdout }}"
