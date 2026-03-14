@@ -1,7 +1,7 @@
 plugin: vmware.vmware.vms
 hostname: vc1.ptl.local
-#username: "{{ ansible_user }}"
-#password: "{{ ansible_password }}"
-username: administrator@vsphere.local
-password: Pradip@123
+username: "{{ ansible_user }}"
+password: "{{ ansible_password }}"
+#username: administrator@vsphere.local
+#password: ***************
 validate_certs: false
