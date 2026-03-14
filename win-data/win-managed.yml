@@ -6,8 +6,10 @@ all:
         ansible_host: 192.168.13.32
         ansible_host: 192.168.13.33
         ansible_host: 192.168.13.34
+        ansible_host: 192.168.13.35
 
     windows_app_servers:
       hosts:
         PCL1.PTL.LOCAL:
           ansible_host: 192.168.12.51
+          ansible_host: 192.168.12.52
