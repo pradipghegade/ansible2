@@ -10,3 +10,4 @@
         validate_certs: false
         name: vm1
         state: powered-on
+      delegate_to: localhost
