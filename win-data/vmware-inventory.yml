@@ -4,6 +4,12 @@ username: "{{ ansible_user }}"
 password: "{{ ansible_password }}"
 validate_certs: false
 
+# Optional grouping
+groups:
+  folder: true
+  tag: true
+
 # Optional filters
-with_tags: true
-with_folders: true
+filters:
+  - power_state == "poweredOn"
+  - guest_os_family == "windowsGuest"
