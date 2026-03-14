@@ -4,9 +4,9 @@
   tasks:
     - name: Power on VM
       community.vmware.vmware_guest_powerstate:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        hostname: "{{ vmware_login_hostname }}"
+        username: "{{ vmware_login_username }}"
+        password: "{{ vmware_login_password }}"
         validate_certs: false
         name: vm1
         state: powered-on
