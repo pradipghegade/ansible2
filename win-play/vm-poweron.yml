@@ -4,7 +4,7 @@
   tasks:
     - name: Power on VM
       #community.vmware.vmware_guest_powerstate:
-       community.vmware.vmware_guest:
+      community.vmware.vmware_guest:
         hostname: "{{ host }}"
         username: "{{ username }}"
         password: "{{ password }}"
