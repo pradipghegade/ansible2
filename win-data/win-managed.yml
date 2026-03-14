@@ -11,8 +11,3 @@ all:
       hosts:
         PCL1.PTL.LOCAL:
           ansible_host: 192.168.12.51
-
-    windows_DMZ_servers: 
-      hosts:
-        ansible_host: 192.168.1.201
-        ansible_user: Administrator
