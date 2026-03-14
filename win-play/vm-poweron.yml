@@ -1,15 +1,14 @@
-- name: Power on VM using AWX credential 'vmware login'
+- name: Power on VMware VM
   hosts: localhost
   gather_facts: no
   tasks:
     - name: Power on VM
-      #community.vmware.vmware_guest_powerstate:
       community.vmware.vmware_guest:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
         validate_certs: false
-        name: vm1
+        datacenter: "PUNE-DC"        # must match your vSphere datacenter name
+        name: "{{ vm_name }}"        # VM display name in vCenter
         state: poweredon
-        datacenter: "pune-dc"
       delegate_to: localhost
