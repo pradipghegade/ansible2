@@ -1,5 +1,5 @@
 all:
-  Children:
+  children:
     windows_DMZ_servers: 
       hosts:
         Router:
