@@ -8,7 +8,7 @@
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
         validate_certs: false
-        datacenter: "PUNE-DC"        # must match your vSphere datacenter name
+        datacenter: "pune-dc"        # must match your vSphere datacenter name
         #name: "{{ vm_name }}"        # VM display name in vCenter
         name: vm1
         state: poweredon
