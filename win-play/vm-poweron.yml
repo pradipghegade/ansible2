@@ -10,5 +10,6 @@
         password: "{{ vcenter_password }}"
         validate_certs: false
         name: vm1
-        state: powered-on
+        state: poweredon
+        datacenter: "pune-dc"
       delegate_to: localhost
