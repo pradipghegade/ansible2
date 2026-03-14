@@ -9,6 +9,7 @@
         password: "{{ vcenter_password }}"
         validate_certs: false
         datacenter: "PUNE-DC"        # must match your vSphere datacenter name
-        name: "{{ vm_name }}"        # VM display name in vCenter
+        #name: "{{ vm_name }}"        # VM display name in vCenter
+        name: vm1
         state: poweredon
       delegate_to: localhost
