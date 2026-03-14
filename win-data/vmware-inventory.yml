@@ -1,0 +1,5 @@
+plugin: community.vmware.vmware_vm_inventory
+hostname: vc1.ptl.local        # Your vCenter FQDN or IP
+username: "{{ ansible_user }}" # Injected from AWX credential
+password: "{{ ansible_password }}"
+validate_certs: false
