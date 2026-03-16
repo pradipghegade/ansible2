@@ -1,0 +1,17 @@
+---
+- name: List VMware VMs
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Gather VM info
+      community.vmware.vmware_vm_info:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: no
+      register: vm_info
+
+    - name: Show VM names
+      debug:
+        msg: "{{ item.name }}"
+      loop: "{{ vm_info.virtual_machines }}"
