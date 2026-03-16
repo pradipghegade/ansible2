@@ -16,7 +16,7 @@
         vm_list: "{{ vm_info.virtual_machines | map(attribute='guest_name') | list }}"
 
     - name: Send VM list via email
-      community.general.mail:
+      mail:
         host: "{{ smtp_host }}"
         port: 587
         username: "{{ smtp_user }}"
