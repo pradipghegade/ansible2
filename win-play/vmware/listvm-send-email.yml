@@ -1,0 +1,36 @@
+---
+- name: List VMware VMs and send email
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Gather VM information
+      community.vmware.vmware_vm_info:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: no
+      register: vm_info
+
+    - name: Format VM list
+      set_fact:
+        vm_list: "{{ vm_info.virtual_machines | map(attribute='guest_name') | list }}"
+
+    - name: Send VM list via email
+      community.general.mail:
+        host: "{{ smtp_host }}"
+        port: 587
+        username: "{{ smtp_user }}"
+        password: "{{ smtp_password }}"
+        to: "pradipghegade101@gmail.com"
+        subject: "VMware VM List Report"
+        body: |
+          Hello,
+
+          Here is the current list of VMs from vCenter:
+
+          {% for vm in vm_list %}
+          - {{ vm }}
+          {% endfor %}
+
+          Regards,
+          AWX Automation
