@@ -3,13 +3,14 @@
   gather_facts: no
   tasks:
     - name: Power on VM
-      community.vmware.vmware_guest:
+      #community.vmware.vmware_guest:
+      community.vmware.vmware_guest_powerstate:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        validate_certs: false
+        validate_certs: no
         datacenter: "pune-dc"        # must match your vSphere datacenter name
         #name: "{{ vm_name }}"        # VM display name in vCenter
         name: vm1
-        state: poweredon
+        state: powered-on
       delegate_to: localhost
