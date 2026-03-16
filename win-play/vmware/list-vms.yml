@@ -13,5 +13,5 @@
 
     - name: Show VM names
       debug:
-        msg: "{{ item.vm }}"
+        msg: "{{ item.guest_name }}"
       loop: "{{ vm_info.virtual_machines }}"
