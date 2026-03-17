@@ -1,7 +1,7 @@
 
 
 - name: Copy file between Windows servers
-  hosts: all
+  hosts: source_server
   tasks:
     - name: Copy file from source to destination
       win_copy:
