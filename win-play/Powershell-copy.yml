@@ -1,12 +1,10 @@
 ---
-  - name: Run powershell script to copy setup
-    hosts: all
-    #become: true
-    gather_facts: false
-    tasks:
-      - name: script to copy msi file
-        ansible.windows.win_powershell:
-          script: |
-            echo "Hello from PowerShell!" | out-file c:\temp\ps.txt -append -force
-            Copy-Item \\node1.ptl.local\c$\temp\file1.txt C:\temp\new\ -Force -Recurse
-            get-date | out-file c:\temp\ps.txt -append -force
+- name: Copy files from source server to other Windows hosts
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Copy files from source server
+      ansible.windows.win_copy:
+        src: "\\\\node1.ptl.local\\c$\\temp\\"
+        dest: "C:\\temp\\new"
+        remote_src: true
