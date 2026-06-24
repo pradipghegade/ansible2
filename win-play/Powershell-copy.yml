@@ -5,6 +5,7 @@
   tasks:
     - name: Copy files from source server
       ansible.windows.win_copy:
-        src: "\\\\node1.ptl.local\\c$\\temp\\"
+        #src: "\\\\node1.ptl.local\\c$\\temp\\"
+        src: "\\\\NODE1.ptl.local\\files\\"
         dest: "C:\\temp\\new"
         remote_src: true
