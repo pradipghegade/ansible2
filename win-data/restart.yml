@@ -1,0 +1,6 @@
+---
+- name: Simple Windows Reboot
+  hosts: all   # Replace with your inventory group
+  tasks:
+    - name: Reboot host
+      ansible.windows.win_reboot:
