@@ -1,1 +1,2 @@
-dc2.ptl.local
+dc2.ptl.local:
+  ansible_host: 192.168.12.12
