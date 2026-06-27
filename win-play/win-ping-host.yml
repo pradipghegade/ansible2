@@ -1,0 +1,8 @@
+---
+- name: Verify Host Connectivity
+  hosts: "{{ target_host }}"
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Ping all managed nodes
+      ansible.windows.win_ping:
