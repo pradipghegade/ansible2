@@ -1,4 +1,3 @@
 all:
   hosts:
-    dc2.ptl.local:
-      ansible_host: 192.168.12.12
+    192.168.12.12
