@@ -1,6 +1,6 @@
 ---
 - name: Verify Host Connectivity
-  hosts: target_host
+  hosts: "{{ target_host }}"
   become: false
   gather_facts: false
   tasks:
