@@ -5,3 +5,6 @@ all:
         Router:
           ansible_host: 192.168.1.201
           ansible_user: Administrator
+        templatevm:
+          ansible_host: 192.168.12.222
+          ansible_user: Administrator
