@@ -1,0 +1,30 @@
+---
+- name: Collect Windows OS version and send via Gmail
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Get Windows OS version
+      win_command: powershell.exe (Get-ComputerInfo).WindowsVersion
+      register: os_version
+
+    - name: Get Windows build number
+      win_command: powershell.exe (Get-ComputerInfo).OsBuildNumber
+      register: os_build
+
+    - name: Format OS details
+      set_fact:
+        os_details: |
+          Host: {{ inventory_hostname }}
+          Windows Version: {{ os_version.stdout }}
+          Build Number: {{ os_build.stdout }}
+
+    - name: Send OS details via Gmail SMTP
+      community.general.mail:
+        host: smtp.gmail.com
+        port: 587
+        username: "{{ gmail_user }}"
+        password: "{{ gmail_app_password }}"
+        to: "recipient@example.com"
+        subject: "Windows OS Version Report"
+        body: "{{ os_details }}"
+        secure: starttls
