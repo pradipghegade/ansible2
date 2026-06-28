@@ -1,9 +1,0 @@
-
-
-- name: Copy file between Windows servers
-  hosts: source_server
-  tasks:
-    - name: Copy file from source to destination
-      win_copy:
-        src: \\ptl.local\public\userdata\shared-files\ChromeSetup.exe
-        dest: C:\Temp\ChromeSetup.exe
