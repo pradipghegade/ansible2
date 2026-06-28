@@ -24,7 +24,7 @@
         port: 587
         username: "{{ gmail_user }}"
         password: "{{ gmail_app_password }}"
-        to: "recipient@example.com"
+        to: "pradipghegade101@gmail.com"
         subject: "Windows OS Version Report"
         body: "{{ os_details }}"
         secure: starttls
