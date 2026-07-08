@@ -1,6 +1,6 @@
 ---
 - name: Copy files from UNC share to C:\temp
-  hosts: windows
+  hosts: all
   gather_facts: no
   tasks:
     - name: Copy files from network share
