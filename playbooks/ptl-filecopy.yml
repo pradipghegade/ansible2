@@ -1,10 +1,11 @@
 ---
 - name: Copy files from Windows share to C:\temp
-  hosts: all
+  hosts: windows
   gather_facts: no
   tasks:
-    - name: Copy files from network share
-      ansible.windows.win_copy:
-        src: "\\\\192.168.12.12\\wallpapers-folder-data\\"
-        dest: "C:\\temp\\"
-        remote_src: true
+    - name: Copy files from UNC share
+      ansible.windows.win_powershell:
+        script: |
+          $src = "\\192.168.12.12\wallpapers-folder-data\*"
+          $dest = "C:\temp\"
+          Copy-Item $src $dest -Recurse -Force
