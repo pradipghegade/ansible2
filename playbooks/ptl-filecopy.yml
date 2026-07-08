@@ -1,24 +1,10 @@
 ---
-- name: Stage files from Windows share to control node
-  hosts: localhost
+- name: Copy files from UNC share to C:\temp
+  hosts: windows
   gather_facts: no
   tasks:
-    - name: Ensure staging directory exists
-      ansible.builtin.file:
-        path: ./staging
-        state: directory
-
-    - name: Fetch files from network share to control node
-      ansible.windows.win_fetch:
-        src: "\\\\192.168.12.12\\wallpapers-folder-data\\file1.jpg"
-        dest: ./staging/
-        flat: yes
-
-- name: Distribute staged files to Windows servers
-  hosts: all
-  gather_facts: no
-  tasks:
-    - name: Copy staged file to C:\temp
+    - name: Copy files from network share
       ansible.windows.win_copy:
-        src: ./staging/file1.jpg
-        dest: C:\temp\
+        src: "\\\\192.168.12.12\\wallpapers-folder-data\\"
+        dest: "C:\\temp\\"
+        remote_src: true
