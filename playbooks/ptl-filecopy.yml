@@ -1,0 +1,10 @@
+---
+- name: Copy files from Windows share to C:\temp
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Copy files from network share
+      ansible.windows.win_copy:
+        src: "\\\\192.168.12.12\\wallpapers-folder-data\\"
+        dest: "C:\\temp\\"
+        remote_src: true
